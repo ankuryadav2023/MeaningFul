@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"> 
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>MeaningFul</title>
+</head>
+<body>
+    <h1>I'm a Dictionary</h1>
+    <div class="container">
+        <input id="word" class="container-elements" type="text" placeholder="enter word here">
+        <button id="inp" class="container-elements" type="button" style="width: 100px;">Find</button>
+    </div>
+    <div class="container" style="top: 100px; height: 280px;">
+        <label id="out" class="container-elements" style="height: 250px; background-color: white;">find the meaning of your word here</label>
+    </div>
+    <script>
+        let inp=document.getElementById('inp');
+        inp.addEventListener('click',()=>{
+            let word=document.getElementById('word').value;
+            let URL="https://api.dictionaryapi.dev/api/v2/entries/en/".concat(word);
+            let p=fetch(URL);
+            p.then((response)=>
+            {
+                return response.json();
+            }).then((result)=>{
+                console.log(result);
+                console.log(result[0].meanings[0].definitions[0].definition);
+                let out=document.getElementById('out').innerHTML=result[0].meanings[0].definitions[0].definition;
+            });
+        });
+    </script>
+</body>
+</html>

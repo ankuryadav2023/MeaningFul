@@ -1,0 +1,28 @@
+body{
+    background-color: rgb(173, 251, 232);
+}
+h1{
+    margin: auto;
+    padding: 30px;
+    max-width: 300px;
+    font-size: 40px;
+    font-family: 'Titillium Web', sans-serif;
+}
+.container{
+    margin: auto;
+    padding: 5px;
+    background-color: rgb(197, 163, 228);
+    max-width: 500px;
+    position: relative;
+    top: 10px;
+}
+.container-elements{
+    display: block;
+    margin: 10px auto 10px auto;
+    border: 2px solid rgb(255, 255, 204);
+    border-radius: 5px;
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+}
